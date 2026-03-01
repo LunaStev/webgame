@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#121826">
+  <title>Nut Alignmen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true"></div>
+
+  <main class="page" aria-label="Nut Alignmen Game Page">
+    <div class="game-shell" aria-label="Game Shell">
+      <header class="appbar">
+        <a class="back-link" href="../">런처로 돌아가기</a>
+        <div class="app-title">
+          <p class="name">Nut Alignmen</p>
+          <p class="tag">Bolt / Nut Sorting Puzzle</p>
+        </div>
+      </header>
+
+      <div class="game-stage" aria-label="Canvas Stage">
+        <div id="app" class="app" aria-label="Canvas puzzle game"></div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="game/main.js"></script>
+</body>
+</html>

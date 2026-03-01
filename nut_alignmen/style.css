@@ -1,0 +1,163 @@
+:root {
+  --ink: #e7ecf8;
+  --ink-soft: #b8c2d9;
+  --frame: #101725;
+  --frame-edge: #2a3448;
+  --panel: #182134;
+  --accent: #5db2ff;
+  --accent-2: #90d5c6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Verdana", "Tahoma", sans-serif;
+  background: #0e1421;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(93, 178, 255, 0.22) 0%, transparent 36%),
+    radial-gradient(circle at 86% 84%, rgba(144, 213, 198, 0.16) 0%, transparent 44%),
+    linear-gradient(165deg, #0f1625 0%, #121a2b 56%, #0e1522 100%);
+}
+
+.page {
+  position: fixed;
+  inset: 0;
+  padding: clamp(0px, 1.5vw, 16px);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.game-shell {
+  width: min(1600px, 100%);
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  border-radius: clamp(0px, 2vw, 22px);
+  overflow: hidden;
+  border: 1px solid rgba(117, 132, 161, 0.4);
+  background: linear-gradient(180deg, #101827 0%, #0f1724 100%);
+  box-shadow:
+    0 22px 56px rgba(0, 0, 0, 0.46),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.appbar {
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, #1a2438 0%, #161f31 100%);
+  border-bottom: 1px solid rgba(127, 145, 179, 0.35);
+}
+
+.back-link {
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #dce8ff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border: 1px solid rgba(122, 171, 223, 0.6);
+  background: linear-gradient(180deg, #2a4b72 0%, #223f60 100%);
+}
+
+.back-link:hover {
+  background: linear-gradient(180deg, #325884 0%, #27476d 100%);
+}
+
+.app-title {
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(1rem, 1.2vw, 1.22rem);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #eef4ff;
+}
+
+.tag {
+  margin: 4px 0 0;
+  font-size: clamp(0.75rem, 0.95vw, 0.88rem);
+  color: var(--ink-soft);
+}
+
+.game-stage {
+  flex: 1;
+  min-height: 0;
+  padding: clamp(0px, 1vw, 10px);
+  background:
+    linear-gradient(180deg, rgba(117, 145, 189, 0.12) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  border-radius: clamp(0px, 1.4vw, 16px);
+  overflow: hidden;
+  border: 1px solid rgba(132, 151, 186, 0.38);
+  background: linear-gradient(180deg, #1a2435 0%, #171f2f 100%);
+}
+
+.game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  image-rendering: auto;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 0;
+  }
+
+  .game-shell {
+    border-radius: 0;
+    border: 0;
+  }
+
+  .appbar {
+    padding-top: calc(10px + env(safe-area-inset-top));
+  }
+
+  .game-stage {
+    padding: 0;
+  }
+
+  .app {
+    border-radius: 0;
+    border: 0;
+  }
+}
